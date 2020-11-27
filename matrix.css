@@ -1,5 +1,5 @@
 /* 
-  Kanban > Eisenhower Matrix (v1.4.0)
+  Kanban > Eisenhower Matrix (v1.4.1)
   Via: @itsjustmath
   
   Usage: `#matrix {{kanban}}`
@@ -7,6 +7,7 @@
 
 [data-tag="matrix"] ~ .rm-full-width .kanban-board {
   padding: 0 !important; /* remove whitespace around quadrant */
+  background-color: transparent !important; /* Strips out some of the default kanban styling, bg colors */
 }
 
 [data-tag="matrix"] ~ .rm-full-width .kanban-board .kanban-column-container {
@@ -17,6 +18,8 @@
 
 [data-tag="matrix"] ~ .rm-full-width .kanban-board  .kanban-column-container .kanban-column {
   flex: 0 48% !important; /* Any percentage over this doesn't wrap correctly, may need tweaking if you're using other custom CSS, */
+  border: 1px solid rgba(0,0,0,0.1) !important;
+  padding: 4px 12px !important;
 }
 
 /* Hide the #matrix tag */
@@ -30,18 +33,8 @@
 }
 
 /*
-  Styling Tweaks (Overriding default {{kanban}} styles)
+  Styling Tweaks
 */ 
-
-/* Strips out some of the default kanban styling, bg colors */
-[data-tag="matrix"] ~ .rm-full-width .kanban-board {
-  background-color: transparent !important;
-}
-
-[data-tag="matrix"] ~ .rm-full-width .kanban-board  .kanban-column-container .kanban-column {
-  border: 1px solid rgba(0,0,0,0.1) !important;
-  padding: 4px 12px !important;
-}
 
 [data-tag="matrix"] ~ .rm-full-width .kanban-board  .kanban-column-container .kanban-column .kanban-title {
   border-bottom: 1px solid rgba(0,0,0,0.2) !important;
