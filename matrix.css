@@ -1,5 +1,5 @@
 /* 
-  Kanban > Eisenhower Matrix (v1.3)
+  Kanban > Eisenhower Matrix (v1.3.1)
   Via: @itsjustmath
   
   Usage: `#matrix {{kanban}}`
@@ -12,7 +12,7 @@
 [data-tag="matrix"] ~ .rm-full-width .kanban-board .kanban-column-container {
   overflow-x: unset !important;
   flex-wrap: wrap !important;
-  padding: 12px 0;
+  padding: 12px 0 !important;
 }
 
 [data-tag="matrix"] ~ .rm-full-width .kanban-board  .kanban-column-container .kanban-column {
@@ -21,12 +21,12 @@
 
 /* Hide the #matrix tag */
 [data-tag="matrix"] {
-  display: none; 
+  display: none !important; 
 }
 
 /* Hide any columns after the first 4 */
 [data-tag="matrix"] ~ .rm-full-width .kanban-board .kanban-column-container .kanban-column:nth-child(n + 5) {
-  display: none;
+  display: none !important;
 }
 
 /*
@@ -36,7 +36,7 @@
 /* (Shrink and) make all quadrants viewable in breadcrumbs */
 .rm-sidebar-outline .rm-zoom-item [data-tag="matrix"] ~ .rm-full-width .kanban-board .kanban-column-container .kanban-column {
   flex: 0 23% !important;
-  font-size: 10px;
+  font-size: 10px !important;
 }
 
 /*
@@ -55,7 +55,7 @@
 @media (max-width: 576px) {
   /* so the board stays within the viewport */
   [data-tag="matrix"] ~ .rm-full-width .kanban-board .kanban-column-container {
-    max-width: 80vw; 
+    max-width: 80vw !important; 
   }
   
   /* Stack the columns on mobile */
