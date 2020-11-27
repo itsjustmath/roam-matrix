@@ -1,5 +1,5 @@
 /* 
-  Kanban > Eisenhower Matrix (v1.3.1)
+  Kanban > Eisenhower Matrix (v1.4.0)
   Via: @itsjustmath
   
   Usage: `#matrix {{kanban}}`
@@ -27,6 +27,29 @@
 /* Hide any columns after the first 4 */
 [data-tag="matrix"] ~ .rm-full-width .kanban-board .kanban-column-container .kanban-column:nth-child(n + 5) {
   display: none !important;
+}
+
+/*
+  Styling Tweaks (Overriding default {{kanban}} styles)
+*/ 
+
+/* Strips out some of the default kanban styling, bg colors */
+[data-tag="matrix"] ~ .rm-full-width .kanban-board {
+  background-color: transparent !important;
+}
+
+[data-tag="matrix"] ~ .rm-full-width .kanban-board  .kanban-column-container .kanban-column {
+  border: 1px solid rgba(0,0,0,0.1) !important;
+  padding: 4px 12px !important;
+}
+
+[data-tag="matrix"] ~ .rm-full-width .kanban-board  .kanban-column-container .kanban-column .kanban-title {
+  border-bottom: 1px solid rgba(0,0,0,0.2) !important;
+}
+
+/* lighten up card background - less jarring */
+[data-tag="matrix"] ~ .rm-full-width .kanban-board  .kanban-column-container .kanban-column .kanban-card {
+  background-color: rgba(256,256,256,0.6) !important;
 }
 
 /*
