@@ -1,0 +1,65 @@
+/* 
+  Kanban > Eisenhower Matrix (v1.3)
+  Via: @itsjustmath
+  
+  Usage: `#matrix {{kanban}}`
+*/
+
+[data-tag="matrix"] ~ .rm-full-width .kanban-board {
+  padding: 0 !important; /* remove whitespace around quadrant */
+}
+
+[data-tag="matrix"] ~ .rm-full-width .kanban-board .kanban-column-container {
+  overflow-x: unset !important;
+  flex-wrap: wrap !important;
+  padding: 12px 0;
+}
+
+[data-tag="matrix"] ~ .rm-full-width .kanban-board  .kanban-column-container .kanban-column {
+  flex: 0 48% !important; /* Any percentage over this doesn't wrap correctly, may need tweaking if you're using other custom CSS, */
+}
+
+/* Hide the #matrix tag */
+[data-tag="matrix"] {
+  display: none; 
+}
+
+/* Hide any columns after the first 4 */
+[data-tag="matrix"] ~ .rm-full-width .kanban-board .kanban-column-container .kanban-column:nth-child(n + 5) {
+  display: none;
+}
+
+/*
+  Sidebar
+*/
+
+/* (Shrink and) make all quadrants viewable in breadcrumbs */
+.rm-sidebar-outline .rm-zoom-item [data-tag="matrix"] ~ .rm-full-width .kanban-board .kanban-column-container .kanban-column {
+  flex: 0 23% !important;
+  font-size: 10px;
+}
+
+/*
+  Linked References
+*/
+
+.rm-reference-main .rm-reference-container .rm-reference-item .roam-block [data-tag="matrix"] ~ .rm-full-width {
+  margin-right: 0 !important; /* keeps a full width kanban within the bounds of the linked ref container */
+}
+
+
+/*
+  Mobile
+*/
+
+@media (max-width: 576px) {
+  /* so the board stays within the viewport */
+  [data-tag="matrix"] ~ .rm-full-width .kanban-board .kanban-column-container {
+    max-width: 80vw; 
+  }
+  
+  /* Stack the columns on mobile */
+  [data-tag="matrix"] ~ .rm-full-width .kanban-board  .kanban-column-container .kanban-column {
+    flex: 100% !important; 
+  }
+}
